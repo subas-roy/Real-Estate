@@ -1,8 +1,11 @@
+import Navbar from "../shared/Navbar/Navbar";
+import Slider from "../shared/Slider/Slider";
 
 const Home = () => {
   return (
     <div>
-      <h2 className="text-2xl">This is home</h2>
+      <Navbar/>
+      <Slider/>
     </div>
   );
 };
