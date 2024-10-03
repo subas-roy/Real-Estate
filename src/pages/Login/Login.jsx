@@ -1,16 +1,34 @@
 import { Helmet } from "react-helmet";
 import Navbar from "../../shared/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  const {signIn} = useContext(AuthContext);
+  const [loginError, setLoginError] = useState('');
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
+    signIn(email, password)
+    .then(result => {
+      console.log(result.user)
+      toast('User logged in successfully')
+    })
+    .catch(error => {
+      console.error(error)
+      setLoginError(error.message)
+    })
+    setLoginError('')
   }
+
   return (
     <div>
+      <ToastContainer/>
       <Helmet>
         <title>Real Estate | Login</title>
       </Helmet>
@@ -37,6 +55,7 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
             <p>Don't have an account? Please <Link to={"/register"} className="btn btn-link font-bold">Register</Link></p>
+            <p className="text-red-600">{loginError}</p>
           </form>
         </div>
       </div>
