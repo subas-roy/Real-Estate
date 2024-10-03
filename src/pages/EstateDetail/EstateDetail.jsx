@@ -31,7 +31,10 @@ const EstateDetail = () => {
           <div>
             <img src={estate.image} alt="" />
           </div>
-          
+          <div>
+            <p className="font-bold text-lg">Description</p>
+            <p>{estate.description}</p>
+          </div>
         </div>
 
         <div>
