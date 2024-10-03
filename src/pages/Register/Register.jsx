@@ -1,29 +1,51 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../shared/Navbar/Navbar";
 import { Helmet } from "react-helmet";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [registerError, setRegisterError] = useState('');
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
+    if (password < 6) {
+      setRegisterError('Password should be at least 6 characters.')
+      return;
+    }
+    else if (!/[A-Z]/.test(password)) {
+      setRegisterError('Your password should have an uppercase character!')
+      return;
+    }
+    else if (!/[a-z]/.test(password)) {
+      setRegisterError('Your password should have an lowercase character!')
+      return;
+    }
+
+    // reset error
+    setRegisterError('')
 
     // create user
     createUser(email, password)
-    .then(result => {
-      console.log(result.user)
-    })
-    .catch(error => {
-      console.error(error)
-    })
+      .then(result => {
+        console.log(result.user)
+        toast('User created successfully!')
+      })
+      .catch(error => {
+        console.error(error)
+        setRegisterError(error.message)
+      })
   }
 
   return (
     <div>
+      <ToastContainer/>
       <Helmet>
         <title>Real Estate | Register</title>
       </Helmet>
@@ -62,6 +84,7 @@ const Register = () => {
               <button className="btn btn-primary">Register</button>
             </div>
             <p>Already have an account? Please <Link to={"/login"} className="btn btn-link font-bold">Login</Link></p>
+            <p className="text-red-600">{registerError}</p>
           </form>
         </div>
       </div>
