@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import Navbar from "../../shared/Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,6 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const {signIn} = useContext(AuthContext);
   const [loginError, setLoginError] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location)
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -17,6 +20,10 @@ const Login = () => {
     signIn(email, password)
     .then(result => {
       console.log(result.user)
+
+      // navigate after login
+      navigate(location?.state ? location.state : '/')
+      
       toast('User logged in successfully')
     })
     .catch(error => {
