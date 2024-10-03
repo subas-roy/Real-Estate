@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Villa in Beverly Hills",
+    "image": "https://i.ibb.co.com/tbMy4S6/beverly-hills-villa.jpg",
+    "segment_name": "Luxury",
+    "description": "A stunning villa offering panoramic city views, infinity pool, and state-of-the-art facilities.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "5000 sq ft",
+    "location": "Beverly Hills, CA",
+    "facilities": ["living room", "swimming pool", "Kitchen", "Home Theater", "Gym"],
+    "button": "View Property"
+  },
+  {
+    "id": 2,
+    "estate_title": "Modern Apartment in Downtown",
+    "image": "https://i.ibb.co.com/845zXyJ/downtown-apartment.jpg",
+    "segment_name": "Urban Living",
+    "description": "A sleek, modern apartment in the heart of downtown, close to all amenities and public transport.",
+    "price": "$750,000",
+    "status": "sale",
+    "area": "1200 sq ft",
+    "location": "New York, NY",
+    "facilities": ["living room", "Kitchen", "Gym"],
+    "button": "View Property"
+  },
+  {
+    "id": 3,
+    "estate_title": "Cozy Suburban House",
+    "image": "https://i.ibb.co.com/bvhJR85/suburban-house.jpg",
+    "segment_name": "Family Homes",
+    "description": "A cozy family home with a spacious garden and close proximity to schools.",
+    "price": "$300,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Orlando, FL",
+    "facilities": ["living room", "Kitchen", "Garden", "Garage"],
+    "button": "View Property"
+  },
+  {
+    "id": 4,
+    "estate_title": "Beachfront Condo",
+    "image": "https://i.ibb.co.com/r35NWwk/beachfront-condo.jpg",
+    "segment_name": "Vacation",
+    "description": "A beautiful condo with breathtaking ocean views and direct beach access.",
+    "price": "$2,000,000",
+    "status": "rent",
+    "area": "1800 sq ft",
+    "location": "Malibu, CA",
+    "facilities": ["living room", "Kitchen", "Swimming pool", "Gym", "Beach Access"],
+    "button": "View Property"
+  }
+]
