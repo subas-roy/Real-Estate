@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../../shared/Footer/Footer";
 
 const Login = () => {
   const {signIn} = useContext(AuthContext);
@@ -23,7 +24,7 @@ const Login = () => {
 
       // navigate after login
       navigate(location?.state ? location.state : '/')
-      
+
       toast('User logged in successfully')
     })
     .catch(error => {
@@ -66,6 +67,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

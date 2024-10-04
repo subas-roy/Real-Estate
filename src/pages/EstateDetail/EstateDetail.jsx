@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Navbar from "../../shared/Navbar/Navbar";
 import { useLoaderData, useParams } from "react-router-dom";
+import Footer from "../../shared/Footer/Footer";
 
 const EstateDetail = () => {
   const estates = useLoaderData();
@@ -41,6 +42,7 @@ const EstateDetail = () => {
 
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

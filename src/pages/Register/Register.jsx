@@ -5,14 +5,18 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from "../../shared/Footer/Footer";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState('');
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
+    const userName = form.get('name');
+    const userPhoto = form.get('photo');
     const email = form.get('email');
     const password = form.get('password');
     if (password < 6) {
@@ -35,6 +39,13 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         console.log(result.user)
+        // set displayName and photoURL
+        updateProfile(result.user, {
+          displayName: userName,
+          photoURL: userPhoto
+        })
+        .then(() => console.log('User updated'))
+        .catch()
         toast('User created successfully!')
       })
       .catch(error => {
@@ -45,7 +56,7 @@ const Register = () => {
 
   return (
     <div>
-      <ToastContainer/>
+      <ToastContainer />
       <Helmet>
         <title>Real Estate | Register</title>
       </Helmet>
@@ -88,6 +99,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Navbar from "../shared/Navbar/Navbar";
 import Slider from "../shared/Slider/Slider";
 import { useLoaderData } from "react-router-dom";
 import Estate from "./Estate";
+import Footer from "../shared/Footer/Footer";
 
 const Home = () => {
   const estates = useLoaderData()
@@ -21,6 +22,7 @@ const Home = () => {
           }
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

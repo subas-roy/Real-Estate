@@ -16,6 +16,10 @@ const Estate = ({estate}) => {
           <p>{price}</p>
           <p>{area}</p>
         </div>
+        <div className="flex justify-between">
+          <div></div>
+          <Link to={`/estate/${id}`}><button className="btn">View Property</button></Link>
+        </div>
       </div>
     </div>
   );

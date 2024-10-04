@@ -9,8 +9,7 @@
     "status": "sale",
     "area": "5000 sq ft",
     "location": "Beverly Hills, CA",
-    "facilities": ["living room", "swimming pool", "Kitchen", "Home Theater", "Gym"],
-    "button": "View Property"
+    "facilities": ["living room", "swimming pool", "Kitchen", "Home Theater", "Gym"]
   },
   {
     "id": 2,
@@ -22,8 +21,7 @@
     "status": "sale",
     "area": "1200 sq ft",
     "location": "New York, NY",
-    "facilities": ["living room", "Kitchen", "Gym"],
-    "button": "View Property"
+    "facilities": ["living room", "Kitchen", "Gym"]
   },
   {
     "id": 3,
@@ -35,8 +33,7 @@
     "status": "sale",
     "area": "2500 sq ft",
     "location": "Orlando, FL",
-    "facilities": ["living room", "Kitchen", "Garden", "Garage"],
-    "button": "View Property"
+    "facilities": ["living room", "Kitchen", "Garden", "Garage"]
   },
   {
     "id": 4,
@@ -48,7 +45,6 @@
     "status": "rent",
     "area": "1800 sq ft",
     "location": "Malibu, CA",
-    "facilities": ["living room", "Kitchen", "Swimming pool", "Gym", "Beach Access"],
-    "button": "View Property"
+    "facilities": ["living room", "Kitchen", "Swimming pool", "Gym", "Beach Access"]
   }
 ]
