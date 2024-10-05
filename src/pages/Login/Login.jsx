@@ -6,10 +6,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../../shared/Footer/Footer";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const {signIn} = useContext(AuthContext);
   const [loginError, setLoginError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location)
@@ -52,11 +54,16 @@ const Login = () => {
                 </label>
                 <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
               </div>
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                <input type={showPassword ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
+                <span className="absolute top-[53px] right-3" onClick={() => setShowPassword(!showPassword)}>
+                  {
+                    showPassword ? <FaEyeSlash/> : <FaEye/>
+                  }
+                </span>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>

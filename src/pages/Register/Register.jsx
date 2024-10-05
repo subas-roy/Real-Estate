@@ -7,10 +7,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../../shared/Footer/Footer";
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
   const { createUser, updateUser } = useContext(AuthContext);
   const [registerError, setRegisterError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -84,11 +86,16 @@ const Register = () => {
                 </label>
                 <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
               </div>
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                <input type={showPassword ? 'text' : 'password'} name="password" placeholder="Password" className="input input-bordered" required />
+                <span className="absolute top-[53px] right-3" onClick={() => setShowPassword(!showPassword)}>
+                  {
+                    showPassword ? <FaEyeSlash/> : <FaEye/>
+                  }
+                </span>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
