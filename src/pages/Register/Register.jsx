@@ -40,18 +40,18 @@ const Register = () => {
     // create user
     createUser(email, password)
       .then(result => {
-        console.log(result.user)
+        // console.log(result.user)
         // set displayName and photoURL
         updateProfile(result.user, {
           displayName: userName,
           photoURL: userPhoto
         })
-        .then(() => console.log('User updated'))
+        // .then(() => console.log('User updated'))
         .catch()
         toast('User created successfully!')
       })
       .catch(error => {
-        console.error(error)
+        // console.error(error)
         setRegisterError(error.message)
       })
   }

@@ -18,8 +18,12 @@ const Slider = () => {
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => {
+        // console.log(swiper)
+      }}
+      onSlideChange={() => {
+        // console.log('slide change')
+      }}
       loop={true}
     >
       <SwiperSlide><img src={"/src/assets/slide-1.jpg"} alt="" /></SwiperSlide>

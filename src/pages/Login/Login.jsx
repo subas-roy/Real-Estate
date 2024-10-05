@@ -9,12 +9,12 @@ import Footer from "../../shared/Footer/Footer";
 import { FaEye, FaEyeSlash, FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
-  const {signIn, googleSignIn} = useContext(AuthContext);
+  const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
   const [loginError, setLoginError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location)
+  // console.log(location)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
     const password = form.get('password');
     signIn(email, password)
     .then(result => {
-      console.log(result.user)
+      // console.log(result.user)
 
       // navigate after login
       navigate(location?.state ? location.state : '/')
@@ -31,7 +31,7 @@ const Login = () => {
       toast('User logged in successfully')
     })
     .catch(error => {
-      console.error(error)
+      // console.error(error)
       setLoginError(error.message)
     })
     setLoginError('')
@@ -41,10 +41,21 @@ const Login = () => {
     e.preventDefault();
     googleSignIn()
     .then(result => {
-      console.log(result.user);
+      // console.log(result.user);
     })
     .catch(error => {
-      console.error(error);
+      // console.error(error);
+    })
+  }
+
+  const handleGithubSignIn = (e) => {
+    e.preventDefault();
+    githubSignIn()
+    .then(result => {
+      // console.log(result.user);
+    })
+    .catch(error => {
+      // console.error(error);
     })
   }
 
@@ -88,7 +99,7 @@ const Login = () => {
                 <p className="text-red-600">{loginError}</p>
                 <div className="space-y-2">
                   <button onClick={handleGoogleSignIn} className="btn btn-outline w-full"><FaGoogle/>Login with Google</button>
-                  <button className="btn btn-outline w-full"><FaGithub/>Login with GitHub</button>
+                  <button onClick={handleGithubSignIn} className="btn btn-outline w-full"><FaGithub/>Login with GitHub</button>
                 </div>
               </form>
             </div>

@@ -9,19 +9,19 @@ import { updateProfile } from "firebase/auth";
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
   // const name = document.getElementById('newName');
-  console.log('name in update ', name)
+  // console.log('name in update ', name)
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget)
     const newName = form.get('name');
     const newPhotoURL = form.get('photo');
-    console.log(newName, newPhotoURL)
+    // console.log(newName, newPhotoURL)
     updateProfile(user, {
       displayName: newName,
       photoURL: newPhotoURL
     })
       .then(() => {
-        console.log('Profile updated.')
+        // console.log('Profile updated.')
         toast('Profile updated successfully!')
       })
       .catch()
