@@ -6,15 +6,16 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../../shared/Footer/Footer";
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
-  const {signIn} = useContext(AuthContext);
+  const {signIn, googleSignIn} = useContext(AuthContext);
   const [loginError, setLoginError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location)
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -34,6 +35,17 @@ const Login = () => {
       setLoginError(error.message)
     })
     setLoginError('')
+  }
+
+  const handleGoogleSignIn = (e) => {
+    e.preventDefault();
+    googleSignIn()
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(error => {
+      console.error(error);
+    })
   }
 
   return (
@@ -74,6 +86,10 @@ const Login = () => {
                 </div>
                 <p>Don't have an account? Please <Link to={"/register"} className="btn btn-link font-bold">Register</Link></p>
                 <p className="text-red-600">{loginError}</p>
+                <div className="space-y-2">
+                  <button onClick={handleGoogleSignIn} className="btn btn-outline w-full"><FaGoogle/>Login with Google</button>
+                  <button className="btn btn-outline w-full"><FaGithub/>Login with GitHub</button>
+                </div>
               </form>
             </div>
           </div>
