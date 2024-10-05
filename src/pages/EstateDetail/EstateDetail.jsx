@@ -14,9 +14,9 @@ const EstateDetail = () => {
       </Helmet>
       <Navbar />
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div className="col-span-2">
-          <div className="flex gap-6 justify-between items-start my-10">
+          <div className="sm:flex gap-6 justify-between items-start my-10">
             <div>
               <div className="flex justify-start gap-6 items-center">
                 <h2 className="text-3xl">{estate.estate_title}</h2>

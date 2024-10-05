@@ -15,10 +15,11 @@ const Navbar = () => {
   const navlinks = <>
     <li><NavLink to={"/"}>Home</NavLink></li>
     <li><NavLink to={"/update"}>Update Profile</NavLink></li>
+    <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
     <li><NavLink to={"/register"}>Register</NavLink></li>
   </>
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 max-w-6xl mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

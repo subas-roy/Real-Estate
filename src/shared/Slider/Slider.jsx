@@ -21,7 +21,6 @@ const Slider = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       loop={true}
-      
     >
       <SwiperSlide><img src={"/src/assets/slide-1.jpg"} alt="" /></SwiperSlide>
       <SwiperSlide><img src={"/src/assets/slide-2.jpg"} alt="" /></SwiperSlide>

@@ -33,33 +33,35 @@ const UpdateProfile = () => {
         <title>Real Estate | Profile</title>
       </Helmet>
       <Navbar />
-      <div className="hero-content bg-base-200 py-8 flex-col">
-        <h2 className="text-3xl">Profile</h2>
-        <div className="hero">
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleUpdate} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
-                <input id="newName" type="text" name="name" placeholder={user.displayName} className="input input-bordered" required />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input id="newEmail" type="email" name="email" value={user.email} className="input input-bordered" />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Photo Url</span>
-                </label>
-                <input id="newPhotoURL" type="text" name="photo" placeholder={user.photoURL} className="input input-bordered" required />
-              </div>
-              <div className="form-control mt-6">
-                <button className="btn btn-primary">Update</button>
-              </div>
-            </form>
+      <div className="bg-base-200">
+        <div className="hero-content py-12 flex-col mx-auto">
+          <h2 className="text-3xl">Profile</h2>
+          <div className="hero">
+            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form onSubmit={handleUpdate} className="card-body">
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input id="newName" type="text" name="name" placeholder={user.displayName} className="input input-bordered" required />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input id="newEmail" type="email" name="email" value={user.email} className="input input-bordered" />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo Url</span>
+                  </label>
+                  <input id="newPhotoURL" type="text" name="photo" placeholder={user.photoURL} className="input input-bordered" required />
+                </div>
+                <div className="form-control mt-6">
+                  <button className="btn btn-primary">Update</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

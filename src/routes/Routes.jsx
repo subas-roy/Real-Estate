@@ -6,11 +6,14 @@ import Register from "../pages/Register/Register";
 import EstateDetail from "../pages/EstateDetail/EstateDetail";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Dashboard from "../pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
         path: "/update",
         element: <PrivateRoute><UpdateProfile/></PrivateRoute>,
         loader: () => fetch('../estates.json')
+      },
+      {
+        path: "/dashboard",
+        element: <PrivateRoute><Dashboard/></PrivateRoute>,
       },
       {
         path: "/login",
