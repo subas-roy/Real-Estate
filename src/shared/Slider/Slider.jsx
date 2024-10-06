@@ -26,8 +26,8 @@ const Slider = () => {
       }}
       loop={true}
     >
-      <SwiperSlide><img src={"/src/assets/slide-1.jpg"} alt="" /></SwiperSlide>
-      <SwiperSlide><img src={"/src/assets/slide-2.jpg"} alt="" /></SwiperSlide>
+      <SwiperSlide><img src="https://i.ibb.co.com/LvgfTvQ/slide-1.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide><img src="https://i.ibb.co.com/SPQwYhx/slide-2.jpg" alt="" /></SwiperSlide>
     </Swiper>
   );
 };
