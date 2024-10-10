@@ -28,10 +28,10 @@ const Dashboard = () => {
             <li><NavLink className="px-4 py-2 hover:bg-[#172133] block">Log Out</NavLink></li>
           </ul>
         </div>
-        <div className="lg:col-span-4 md:col-span-3 sm:col-span-2 pl-24 bg-[#F5F7FB]">
+        <div className="lg:col-span-4 md:col-span-3 sm:col-span-2 lg:pl-24 bg-[#F5F7FB]">
           <div className="p-4 bg-white text-white">
             <h2 className="text-lg text-[#532222] mb-4 font-semibold">Manage Dashboard</h2>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               <div className="h-20 bg-[#1EC38B] rounded-md p-4">
                 <p>Published Property</p>
               </div>
