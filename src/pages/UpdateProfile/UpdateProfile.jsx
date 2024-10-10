@@ -43,19 +43,19 @@ const UpdateProfile = () => {
                   <label className="label">
                     <span className="label-text">Name</span>
                   </label>
-                  <input id="newName" type="text" name="name" placeholder={user.displayName} className="input input-bordered" required />
+                  <input id="newName" type="text" name="name" defaultValue={user.displayName} className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
-                  <input id="newEmail" type="email" name="email" value={user.email} className="input input-bordered" />
+                  <input id="newEmail" type="email" name="email" defaultValue={user.email} className="input input-bordered" readOnly />
                 </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Photo Url</span>
                   </label>
-                  <input id="newPhotoURL" type="text" name="photo" placeholder={user.photoURL} className="input input-bordered" required />
+                  <input id="newPhotoURL" type="text" name="photo" defaultValue={user.photoURL} className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Update</button>
